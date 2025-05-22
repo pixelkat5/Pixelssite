@@ -4,35 +4,52 @@ var flip = new Audio('https://pixel5.info/sound/00002_streaming.mp3');
 document.addEventListener('DOMContentLoaded', function() {
     const choices = document.querySelectorAll('.choice');
     let selectedIndex = 0;
+    let audioReady = false;
 
     function updateSelection() {
-      choices.forEach((choice, index) => {
-        const arrow = choice.querySelector('.arrow');
-        if (index === selectedIndex) {
-          choice.classList.add('selected');
-          arrow.classList.remove('hidden');
-        } else {
-          choice.classList.remove('selected');
-          arrow.classList.add('hidden');
+        choices.forEach((choice, index) => {
+            const arrow = choice.querySelector('.arrow');
+            if (index === selectedIndex) {
+                choice.classList.add('selected');
+                arrow.classList.remove('hidden');
+            } else {
+                choice.classList.remove('selected');
+                arrow.classList.add('hidden');
+            }
+        });
+    }
+
+    function enableAudio() {
+        if (!audioReady) {
+
+            click.play().then(() => click.pause()).catch(() => {});
+            flip.play().then(() => flip.pause()).catch(() => {});
+            audioReady = true;
         }
-      });
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        flip.play();
-        selectedIndex = (selectedIndex - 1 + choices.length) % choices.length;
-        updateSelection();
-      } else if (e.key === 'ArrowRight') {
-        flip.play();
-        selectedIndex = (selectedIndex + 1) % choices.length;
-        updateSelection();
-      } else if (e.key === 'Enter') {
-        click.play();
-        const selectedChoice = choices[selectedIndex].dataset.choice;
-        alert(`You chose: ${selectedChoice}`);
-      }
+        enableAudio();
+
+        if (e.key === 'ArrowLeft') {
+            flip.currentTime = 0;
+            flip.play();
+            selectedIndex = (selectedIndex - 1 + choices.length) % choices.length;
+            updateSelection();
+        } else if (e.key === 'ArrowRight') {
+            flip.currentTime = 0;
+            flip.play();
+            selectedIndex = (selectedIndex + 1) % choices.length;
+            updateSelection();
+        } else if (e.key === 'Enter') {
+            click.currentTime = 0;
+            click.play();
+            const selectedChoice = choices[selectedIndex].dataset.choice;
+            alert(`You chose: ${selectedChoice}`);
+        }
     });
+
+    document.addEventListener('click', enableAudio, { once: true });
 
     updateSelection();
 });
@@ -44,7 +61,7 @@ var audioFiles = [
     "https://pixel5.info/sound/SYSTEM-475-morgana.mp3",
     "https://pixel5.info/sound/SYSTEM-63-hold_up.mp3",
     "https://pixel5.info/sound/SYSTEM-82-stab_knife.mp3",
-    "https://pixel5.info/00002_streaming.mp3"
+    "https://pixel5.info/sound/00002_streaming.mp3"
 ];
     
 function preloadAudio(url) {
@@ -57,7 +74,7 @@ var loaded = 0;
 function loadedAudio() {
     loaded++;
     if (loaded == audioFiles.length){
-    	init();
+        init();
     }
 }
     
@@ -70,11 +87,11 @@ function play(index) {
 function init() {
     var i = 0;
     player.onended = function() {
-    	i++;
+        i++;
         if (i >= audioFiles.length) {
             return;
         }
-    	play(i);
+        play(i);
     };
     play(i);
 }
