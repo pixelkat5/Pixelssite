@@ -1,6 +1,8 @@
 var click = new Audio('https://pixel5.info/sound/P5R-Select.mp3');
 
-const choices = document.querySelectorAll('.choice');
+// Wait for the DOM to be fully loaded before running the script
+document.addEventListener('DOMContentLoaded', function() {
+    const choices = document.querySelectorAll('.choice');
     let selectedIndex = 0;
 
     function updateSelection() {
@@ -27,15 +29,11 @@ const choices = document.querySelectorAll('.choice');
         click.play();
         const selectedChoice = choices[selectedIndex].dataset.choice;
         alert(`You chose: ${selectedChoice}`);
-        click.play();
       }
     });
 
     updateSelection(); // Initial display
-
-
-
-
+});
 
 
 //Javascript Preloading draft
