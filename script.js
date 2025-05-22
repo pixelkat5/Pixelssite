@@ -1,6 +1,6 @@
 var click = new Audio('https://pixel5.info/sound/P5R-Select.mp3');
+var flip = new Audio('https://pixel5.info/sound/00002_streaming.mp3');
 
-// Wait for the DOM to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function() {
     const choices = document.querySelectorAll('.choice');
     let selectedIndex = 0;
@@ -20,9 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
+        flip.play();
         selectedIndex = (selectedIndex - 1 + choices.length) % choices.length;
         updateSelection();
       } else if (e.key === 'ArrowRight') {
+        flip.play();
         selectedIndex = (selectedIndex + 1) % choices.length;
         updateSelection();
       } else if (e.key === 'Enter') {
@@ -32,16 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    updateSelection(); // Initial display
+    updateSelection();
 });
-
-
-//Javascript Preloading draft
-//Javascript Preloading draft
-//Javascript Preloading draft
-
-
-/*
 
 var audioFiles = [
     "https://pixel5.info/sound/P5R-Select.mp3",
@@ -55,19 +49,14 @@ var audioFiles = [
     
 function preloadAudio(url) {
     var audio = new Audio();
-    // once this file loads, it will call loadedAudio()
-    // the file will be kept by the browser as cache
     audio.addEventListener('canplaythrough', loadedAudio, false);
     audio.src = url;
 }
     
 var loaded = 0;
 function loadedAudio() {
-    // this will be called every time an audio file is loaded
-    // we keep track of the loaded files vs the requested files
     loaded++;
     if (loaded == audioFiles.length){
-    	// all have loaded
     	init();
     }
 }
@@ -79,25 +68,17 @@ function play(index) {
 }
     
 function init() {
-    // do your stuff here, audio has been loaded
-    // for example, play all files one after the other
     var i = 0;
-    // once the player ends, play the next one
     player.onended = function() {
     	i++;
         if (i >= audioFiles.length) {
-            // end 
             return;
         }
     	play(i);
     };
-    // play the first file
     play(i);
 }
     
-// we start preloading all the audio files
 for (var i in audioFiles) {
     preloadAudio(audioFiles[i]);
 }
-
-*/
