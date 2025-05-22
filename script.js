@@ -44,7 +44,7 @@ var audioFiles = [
     "https://pixel5.info/sound/SYSTEM-475-morgana.mp3",
     "https://pixel5.info/sound/SYSTEM-63-hold_up.mp3",
     "https://pixel5.info/sound/SYSTEM-82-stab_knife.mp3",
-    "https://pixel5.info/"
+    "https://pixel5.info/00002_streaming.mp3"
 ];
     
 function preloadAudio(url) {
