@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'lustdisplay';
-    src: url('lust-display.woff2') format('woff2'),
-         url('lust-display.woff') format('woff');
+    src: url('fonts/lust-display.woff2') format('woff2'),
+         url('fonts/lust-display.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
