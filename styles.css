@@ -105,6 +105,7 @@
       0% { left: -27px; }
       50% { left: -23px; }
       100% { left: -27px; }
+	    
     }
 	textarea {
   	width: 100%;
