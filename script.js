@@ -1,10 +1,10 @@
 var click = new Audio('https://pixel5.info/sound/P5R-Select.mp3');
 var flip = new Audio('https://pixel5.info/sound/00002_streaming.mp3');
 
-// Simple yes/no messages
+// Simple yes/no messages (matching your HTML capitalization)
 const choiceMessages = {
-    'yes': 'You selected Yes!',
-    'no': 'You selected No!'
+    'Yes': 'You agreed to the terms!',
+    'No': 'You declined the agreement.'
 };
 
 document.addEventListener('DOMContentLoaded', function() {
