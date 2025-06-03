@@ -1,11 +1,17 @@
 var click = new Audio('https://pixel5.info/sound/P5R-Select.mp3');
 var flip = new Audio('https://pixel5.info/sound/00002_streaming.mp3');
 
+// Simple yes/no messages
+const choiceMessages = {
+    'yes': 'You selected Yes!',
+    'no': 'You selected No!'
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     const choices = document.querySelectorAll('.choice');
     let selectedIndex = 0;
     let audioReady = false;
-
+    
     function updateSelection() {
         choices.forEach((choice, index) => {
             const arrow = choice.querySelector('.arrow');
@@ -18,19 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
+    
     function enableAudio() {
         if (!audioReady) {
-
             click.play().then(() => click.pause()).catch(() => {});
             flip.play().then(() => flip.pause()).catch(() => {});
             audioReady = true;
         }
     }
-
+    
     document.addEventListener('keydown', (e) => {
         enableAudio();
-
         if (e.key === 'ArrowLeft') {
             flip.currentTime = 0;
             flip.play();
@@ -45,12 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
             click.currentTime = 0;
             click.play();
             const selectedChoice = choices[selectedIndex].dataset.choice;
-            alert(`You chose: ${selectedChoice}`);
+            
+            // Show different alert based on yes/no selection
+            const message = choiceMessages[selectedChoice] || 'You made a choice!';
+            alert(message);
         }
     });
-
+    
     document.addEventListener('click', enableAudio, { once: true });
-
     updateSelection();
 });
 
