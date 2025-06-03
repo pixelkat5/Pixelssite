@@ -1,6 +1,17 @@
 var click = new Audio('https://pixel5.info/sound/P5R-Select.mp3');
 var flip = new Audio('https://pixel5.info/sound/00002_streaming.mp3');
 
+
+function collapseui() {
+    var x = document.getElementsByClassName("ui")[0];
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
 const choiceMessages = {
     'Yes': 'This should close this piece of UI. It doesnt work for now though.',
     'No': 'This should inject a cookie. It wont work for now so dont worry.'
