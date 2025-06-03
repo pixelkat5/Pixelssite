@@ -3,7 +3,7 @@ var flip = new Audio('https://pixel5.info/sound/00002_streaming.mp3');
 
 
 function collapseui() {
-    var x = document.getElementsByClassName("ui")[0];
+    var x = document.getElementsByClassName("dialog-box")[0];
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
