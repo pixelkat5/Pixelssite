@@ -1,7 +1,6 @@
 var click = new Audio('https://pixel5.info/sound/P5R-Select.mp3');
 var flip = new Audio('https://pixel5.info/sound/00002_streaming.mp3');
 
-// Simple yes/no messages (matching your HTML capitalization)
 const choiceMessages = {
     'Yes': 'You agreed to the terms!',
     'No': 'You declined the agreement.'
@@ -49,12 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
             click.currentTime = 0;
             click.play();
             const selectedChoice = choices[selectedIndex].dataset.choice;
-            
-            // Debug - let's see what we're getting
-            console.log('Selected choice:', selectedChoice);
-            console.log('Available messages:', choiceMessages);
-            
-            // Show different alert based on yes/no selection
             const message = choiceMessages[selectedChoice] || 'You made a choice!';
             alert(message);
         }
