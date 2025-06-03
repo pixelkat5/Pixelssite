@@ -50,6 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
             click.play();
             const selectedChoice = choices[selectedIndex].dataset.choice;
             
+            // Debug - let's see what we're getting
+            console.log('Selected choice:', selectedChoice);
+            console.log('Available messages:', choiceMessages);
+            
             // Show different alert based on yes/no selection
             const message = choiceMessages[selectedChoice] || 'You made a choice!';
             alert(message);
