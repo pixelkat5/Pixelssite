@@ -2,8 +2,8 @@ var click = new Audio('https://pixel5.info/sound/P5R-Select.mp3');
 var flip = new Audio('https://pixel5.info/sound/00002_streaming.mp3');
 
 const choiceMessages = {
-    'Yes': 'You agreed to the terms!',
-    'No': 'You declined the agreement.'
+    'Yes': 'This should close this piece of UI. It doesnt work for now though.',
+    'No': 'This should inject a cookie. It wont work for now so dont worry.'
 };
 
 document.addEventListener('DOMContentLoaded', function() {
