@@ -6,3 +6,4 @@
 Happy pride month people!
 
 I'm currently working on a transition from the pop up
+I'm currently on break! I'm recovering from burn out of my classes which is sad... So because of that, Updates might take a second as I recover. I might just take a break.
