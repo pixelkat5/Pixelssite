@@ -2,7 +2,7 @@ var click = new Audio('https://pixel5.info/sound/P5R-Select.mp3');
 var flip = new Audio('https://pixel5.info/sound/00002_streaming.mp3');
 
 function collapseui() {
-    document.getElementsByClassName("dialog-box")[0].style.display = "none";
+    document.querySelector(".overlay").style.display = "none";
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -32,6 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     document.addEventListener('keydown', (e) => {
+        const overlay = document.querySelector('.overlay');
+        if (!overlay || overlay.style.display === 'none') {
+            return;
+        }
+        
         enableAudio();
         if (e.key === 'ArrowLeft') {
             flip.currentTime = 0;
