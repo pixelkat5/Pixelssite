@@ -121,6 +121,8 @@ textarea {
     padding: 30px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 70rem;
+    width: 50rem;
 }
 
 h1.lustfont {
