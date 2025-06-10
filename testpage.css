@@ -28,17 +28,16 @@
 	border: 3px solid #000;
 	margin-bottom: 5px;
 	padding: 10px;
-	background-color: #FFF;
+	background-color: #F00;
 	box-shadow: 4px 4px #000;
 	border-radius: 0;
 }
 
 .welcome2 {
-	border: 3px solid #000;
 	width: auto;
 	height: auto;
 	padding: 15px;
-	background-color: #FFF;
+	background-color: #F00;
 	
 }
 
@@ -82,7 +81,7 @@
 
 #counter {
     padding: .5em;
-    background-color: #ff5f5f;
+    background-color: #fff;
     border: 3px solid #000;
 	width: auto;
   	box-shadow: 4px 4px #000;
