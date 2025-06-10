@@ -13,6 +13,7 @@
 	border: 3px solid #000;
 	margin-bottom: 10px;
 	background-color: white;
+	box-shadow: 4px 4px #000;
 }
 
 .top {
@@ -29,6 +30,7 @@
 	padding: 10px;
 	background-color: #FFF;
 	box-shadow: 4px 4px #000;
+	border-radius: 0;
 }
 
 .welcome2 {
