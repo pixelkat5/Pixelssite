@@ -4,15 +4,15 @@
 	border: 1px solid black;
 	margin: auto;
 	padding: 20px;
-	background-color: #ffebbd;
+	background-color: #f00;
 }
 
 .header {
 	width: auto;
 	height: 140px;
-	border: 2px solid #62128b;
-	border-radius: 10px 10px 0px 0px;
+	border: 3px solid #000;
 	margin-bottom: 10px;
+	background-color: white;
 }
 
 .top {
@@ -24,37 +24,40 @@
 .welcome-sign {
 	width: 800px;
 	height: 355px;
-	border: 1px solid #B8388B;
+	border: 3px solid #000;
 	margin-bottom: 5px;
 	padding: 10px;
-	background-color: #FEF2DA;
+	background-color: #FFF;
+	box-shadow: 4px 4px #000;
+	border-radius: 0;
 }
 
 .welcome2 {
-	border: 2px solid #B8388B;
+	border: 3px solid #000;
 	width: auto;
 	height: auto;
 	padding: 15px;
-	border-radius: 15px;
-	background-color: #FFB0AE;
+	background-color: #FFF;
 	
 }
 
 .update-corner {
 	width: 800px;
 	height: auto;
-	border: 1px solid #B8388B;
+	border: 3px solid #000;
 	margin-top: 5px;
 	padding: 15px;
-	box-shadow: inset 0px 0px 2px 2px #fff0, 0px 5px #00000038
+	box-shadow: 4px 4px #000;
+	background-color: white;
 }
 
 .nav {
 	width: 200px;
 	height: 610px;
-	border: 2px solid #B93A8B;
-	background-color: #FFB0AE;
+	border: 3px solid #000;
+	background-color: #FFF;
 	margin-right: 3px;
+	box-shadow: 4px 4px #000;
 }
 
 .main-nav {
@@ -78,9 +81,8 @@
 
 #counter {
     padding: .5em;
-    background-color: #fee7d3;
-    border: 2px solid #FD8A85;
-	border-radius: 5px;
+    background-color: #ff5f5f;
+    border: 3px solid #000;
 	width: auto;
-  	box-shadow: inset 0px 0px 2px 2px #fff0, 0px 5px #00000038
+  	box-shadow: 4px 4px #000;
 }
