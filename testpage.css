@@ -29,7 +29,6 @@
 	padding: 10px;
 	background-color: #FFF;
 	box-shadow: 4px 4px #000;
-	border-radius: 0;
 }
 
 .welcome2 {
@@ -71,7 +70,7 @@
 }
 
 .big-container, .welcome-sign, .update-corner, .nav {
-	border-radius: 10px;
+
 }
 
 .flex-2 {
